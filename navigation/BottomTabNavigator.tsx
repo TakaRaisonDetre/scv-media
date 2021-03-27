@@ -62,6 +62,12 @@ const HomeStack = createStackNavigator<HomeParamList>();
 function TabOneNavigator() {
   return (
     <HomeStack.Navigator>
+       <HomeStack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      
       <HomeStack.Screen
         name="MovieDetailScreen"
         component={MovieDetailScreen}
@@ -69,11 +75,7 @@ function TabOneNavigator() {
           title:''
         }}
       />
-       <HomeStack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
+      
     </HomeStack.Navigator>
   );
 }

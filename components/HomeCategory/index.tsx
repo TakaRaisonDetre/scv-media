@@ -34,8 +34,6 @@ const HomeCategory=(props:HomeCategoryProps)=> {
      showsHorizontalScrollIndicator={false}
      />
      
-     
-     <Image style={styles.image} source={{uri:'https://i.pinimg.com/originals/61/46/56/614656045f731fa4c56b89cde05d3c14.jpg'}} />
     </>
   );
 }

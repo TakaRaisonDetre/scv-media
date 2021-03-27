@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "scvmedia",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authscvmediad0144f16",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

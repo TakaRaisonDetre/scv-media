@@ -3,7 +3,7 @@
     "name": "scv-media",
     "slug": "scv-media",
     "version": "1.0.0",
-    "orientation": "portrait",
+ 
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "dark",

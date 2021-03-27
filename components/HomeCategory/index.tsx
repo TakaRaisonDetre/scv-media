@@ -38,7 +38,7 @@ const HomeCategory=(props:HomeCategoryProps)=> {
      data ={category.movies}
      renderItem ={({item})=>(
        <Pressable onPress={()=>onMoviePress(item)}>
-  <Image style={styles.image} source={{uri:item.poster}}/>
+      <Image style={styles.image} source={{uri:item.poster}}/>
        </Pressable>
        
      )}

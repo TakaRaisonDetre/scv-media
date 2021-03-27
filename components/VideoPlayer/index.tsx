@@ -34,7 +34,6 @@ const VideoPlayer = (props: VideoPlayerProps) => {
          {},
         false
      )
-
     })();
     },[episode])
    

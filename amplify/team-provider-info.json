@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-scvmedia-dev-195326-authRole",
+      "UnauthRoleArn": "arn:aws:iam::602722784296:role/amplify-scvmedia-dev-195326-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::602722784296:role/amplify-scvmedia-dev-195326-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-scvmedia-dev-195326-deployment",
+      "UnauthRoleName": "amplify-scvmedia-dev-195326-unauthRole",
+      "StackName": "amplify-scvmedia-dev-195326",
+      "StackId": "arn:aws:cloudformation:us-east-1:602722784296:stack/amplify-scvmedia-dev-195326/ab151870-8eea-11eb-b729-0ed02896373b",
+      "AmplifyAppId": "d3id6doqd5lmpv"
+    },
+    "categories": {
+      "auth": {
+        "scvmediad0144f16": {}
+      }
+    }
+  }
+}

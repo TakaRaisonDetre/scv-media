@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import styles from './styles'
 import {AntDesign} from '@expo/vector-icons'
+import { Episode } from '../../models'
 
 interface EpisodeItemProps {
     episode :{
@@ -12,7 +13,7 @@ interface EpisodeItemProps {
         plot:string,
         video:string
     }
-   onPress : (episode:episode) => {}
+   onPress : (episode:Episode) => {}
 }
 
 const EpisodeItem = (props: EpisodeItemProps) => {

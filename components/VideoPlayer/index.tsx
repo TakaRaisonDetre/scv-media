@@ -2,7 +2,8 @@ import React, {useRef, useState, useEffect} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import styles from './styles'
 import {Video } from 'expo-av' 
-import { setStatusBarStyle } from 'expo-status-bar'
+import{Playback} from 'expo-av/build/AV'
+import {Storage} from 'aws-amplify'
 
 interface VideoPlayerProps {
     episode :{
@@ -18,33 +19,48 @@ interface VideoPlayerProps {
 const VideoPlayer = (props: VideoPlayerProps) => {
     
     const {episode} = props;
+    const [videoUrl, setVideoUrl]=useState('')
+
     const video = useRef<Playback>(null);
     const [status, setStatus] = useState({})
 
+
+
     useEffect(()=>{
-   
-   if(!video){
-       return;
-
-   }    
-    (async () =>{
-     await video?.current?.unloadAsync();
-     await video?.current?.loadAsync(
-         {uri:episode.video},
-         {},
-        false
-     )
-    })();
+        if(episode.video.startsWith('http')){
+            setVideoUrl(episode.video);
+            return;
+        }
+        Storage.get(episode.video).then(setVideoUrl);
     },[episode])
-   
-    return (
 
+    useEffect(()=>{
+        if(!video){
+            return;
+        }    
+            (async () =>{
+            await video?.current?.unloadAsync();
+            await video?.current?.loadAsync(
+                {uri:videoUrl},
+                {},
+                false
+            )
+    })();
+    },[videoUrl])
+
+   console.log(videoUrl)
+
+   if(!videoUrl){
+       return null;
+   }
+
+    return (
        
-           <Video
+        <Video
            ref={video}
            style={styles.video}
            source ={{
-               uri:episode.video,
+               uri:videoUrl,
            }}
              posterSource={{
                  uri:episode.poster,
@@ -52,10 +68,10 @@ const VideoPlayer = (props: VideoPlayerProps) => {
            posterStyle={{
                resizeMode:'cover'
            }}
-           usePoster={true}
+           usePoster={false}
            useNativeControls
            resizeMode="contain"
-           onPlaybackStatusUpdate={status=> setStatus(()=>status)} 
+           onPlaybackStatusUpdate={status => setStatus(() => status)}    
            />
 
         

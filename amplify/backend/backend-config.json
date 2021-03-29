@@ -23,5 +23,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "scvmedia": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
